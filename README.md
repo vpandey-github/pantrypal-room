@@ -4,11 +4,27 @@
 
 Built with [Switch](https://github.com/sandbox-quantum/switch) for the [Flip the Switch hackathon](https://www.wemakedevs.org/hackathons/switch), Track 2: Best Personal or Creative Workflow.
 
+![Built on Switch](https://img.shields.io/badge/built%20on-Switch-6f42c1)
+![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776ab?logo=python&logoColor=white)
+![Standard library only](https://img.shields.io/badge/dependencies-none-brightgreen)
+![Tests](https://img.shields.io/badge/tests-18%20passing-brightgreen)
+![MIT license](https://img.shields.io/badge/license-MIT-blue)
+
+**At a glance**
+
+- 🛒 Say "bought 2 L milk" in plain words, or 🧾 post a photo of the grocery bill, and the stock updates
+- ⏰ Warnings about food that expires soon, handed straight to the Chef
+- 🗳️ The Chef suggests meals that use that food first, and the family votes on dinner in chat
+- ✅ A weekly shopping list that only the list owner can approve, checked in code
+- 📉 A waste report: what went off, what it cost, and whether waste is going down
+
 ## Demo video (2 min)
 
-[![PantryPal demo video: AI agents run my kitchen](demo/thumbnail.png)](https://youtu.be/dFe7UsP8mRk)
-
-Watch on YouTube: https://youtu.be/dFe7UsP8mRk
+<p align="center">
+  <a href="https://youtu.be/dFe7UsP8mRk"><img src="demo/thumbnail.png" alt="PantryPal demo video: AI agents run my kitchen" width="720"></a>
+  <br>
+  <b>▶ <a href="https://youtu.be/dFe7UsP8mRk">Watch the 2-min demo on YouTube</a></b>
+</p>
 
 | The family votes on dinner | Only the list owner can approve |
 | --- | --- |
@@ -29,7 +45,7 @@ Everyone in the family chats in one room, `#kitchen`, with two AI agents:
 | **Chef** agent | Suggests meals that use the expiring food first, runs a family vote on dinner, and drafts the weekly shopping list |
 | List owner (a person) | The only one who can approve the shopping list |
 
-Every Sunday the Keeper posts a waste report: what went off, what it cost, and whether waste is going down.
+Ask the Keeper for a weekly report to see what went off, what it cost, and whether waste is going down.
 
 ## How Switch is used
 
@@ -52,8 +68,9 @@ Without Switch there is no room, no hand-off and no approval step: the project w
             Switch room: #kitchen (Mattermost)
  ┌─────────────────┐   ┌──────────────────┐   ┌──────────────────┐
  │ Family members  │──▶│ Pantry Keeper    │──▶│ Chef             │
- │ log buys + uses │   │ updates stock,   │   │ meals + shopping │
- │ owner approves  │◀──┼──────────────────┼───│ list, asks owner │
+ │ log buys + uses │   │ updates stock,   │   │ meals, vote,     │
+ │ post bill photo │   │ reads bill photo │   │ shopping list    │
+ │ owner approves  │◀──┼──────────────────┼───│ asks the owner   │
  └─────────────────┘   └────────┬─────────┘   └────────┬─────────┘
                                 │ runs                 │ runs
                      pantry.py, expiring.py   meals.py, shopping_list.py,
@@ -64,11 +81,11 @@ Without Switch there is no room, no hand-off and no approval step: the project w
 
 ## Setup (about 15 minutes)
 
-You need a Mac, [Docker Desktop](https://www.docker.com/products/docker-desktop/), Python 3.11+, Git, [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) and [Switch Console](https://github.com/sandbox-quantum/switch). The tools use only the Python standard library: there is nothing to `pip install`.
+Tested on macOS. You need [Docker Desktop](https://www.docker.com/products/docker-desktop/), Python 3.11+, Git, [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) and [Switch Console](https://github.com/sandbox-quantum/switch). The tools use only the Python standard library: there is nothing to `pip install`.
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/<your-username>/pantrypal-room.git
+   git clone https://github.com/vpandey-github/pantrypal-room.git
    cd pantrypal-room
    ```
 2. **Start Switch.** Follow the [Switch quickstart](https://docs.switchagents.ai/switch-rooms/getting-started). Switch Console runs Switch in Docker and comes with Mattermost.
@@ -111,8 +128,8 @@ Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a p
 | Dad | `@pantry-chef approved` | Chef waits: only the list owner can approve |
 | You | `@pantry-chef remove potatoes, add 200 g paneer, approved` | Chef posts the final list |
 | You | `@pantry-keeper weekly report` | 3 items wasted, about $3.06, down 67% from $9.20 last week |
-| You | `@pantry-keeper got these today`, with [`demo/sample-bill.png`](demo/sample-bill.png) attached | Keeper reads the bill, lists 6 food items (1 L milk from 2 × 500 ml, carry bag left out) and asks how many tomatoes and onions, since it tracks those in pieces |
-| You | `@pantry-keeper 8 tomatoes and 12 onions. yes` | Keeper adds all 6 items, $23.53 in total |
+| You | `@pantry-keeper got these today`, with [`demo/sample-bill.png`](demo/sample-bill.png) attached | Keeper reads the bill, lists 6 food items (1 L milk from 2 × 500 ml, carry bag left out) and asks how many tomatoes and onions, since it tracks those in pieces. It may also ask whether the milk and eggs are the ones Mom already logged |
+| You | `@pantry-keeper 8 tomatoes and 12 onions. It was a different trip. yes` | Keeper adds all 6 items, $23.53 in total |
 
 To run the demo again from the start: `python3 scripts/seed.py --owner <your-username>`.
 
@@ -120,9 +137,12 @@ To run the demo again from the start: `python3 scripts/seed.py --owner <your-use
 
 Each script prints JSON with a `message` the agents can post in chat.
 
+<details>
+<summary>All commands</summary>
+
 | Command | What it does |
 | --- | --- |
-| `python3 tools/pantry.py add --item milk --qty 2 --unit L --expiry 2027-12-31 --price 56 --by Mom` | Record a purchase |
+| `python3 tools/pantry.py add --item milk --qty 2 --unit L --expiry 2027-12-31 --price 2.58 --by Mom` | Record a purchase |
 | `python3 tools/pantry.py use --item eggs --qty 4 --by Dad` | Record usage; uses the batch that expires first |
 | `python3 tools/pantry.py cook --meal "palak paneer" --by Mom` | Record a meal cooked: uses every ingredient of the recipe, or changes nothing if one is short |
 | `python3 tools/pantry.py discard --item spinach --by Mom` | Record food thrown away |
@@ -133,6 +153,8 @@ Each script prints JSON with a `message` the agents can post in chat.
 | `python3 tools/shopping_list.py approve --by <owner> --remove onions --add "paneer:200:g"` | Approve the list (list owner only) |
 | `python3 tools/weekly_report.py` | Waste this week vs last week, in $ |
 
+</details>
+
 Data lives in `data/`: `pantry.json` (stock, by purchase batch), `staples.json` (what the family always keeps), `recipes.json`, `history.json`, `settings.json` (list owner) and `approved_lists.json`.
 
 ## Tests
@@ -141,9 +163,12 @@ Data lives in `data/`: `pantry.json` (stock, by purchase batch), `staples.json` 
 python3 -m unittest -v
 ```
 
-The tests run every tool against a fresh copy of the demo data, with today's date fixed.
+The 18 tests run every tool against a fresh copy of the demo data, with today's date fixed.
 
 ## Troubleshooting
+
+<details>
+<summary>Common problems and fixes</summary>
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
@@ -152,6 +177,8 @@ The tests run every tool against a fresh copy of the demo data, with today's dat
 | "bought milk" gets no reply | No main agent in the room yet | Type `!assign-agent @pantry-keeper` once in `#kitchen` |
 | The Chef ignores "approved" | The approval wasn't tagged, or it shared a message with another agent's tag | Send `@pantry-chef approved` as its own message |
 | Mom or Dad can't post in `#kitchen` | The template adds only you to the room | `$MM channel users add switch:kitchen mom dad` (setup step 6) |
+
+</details>
 
 ## Known limitations
 
