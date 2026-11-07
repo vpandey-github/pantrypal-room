@@ -81,20 +81,26 @@ Without Switch there is no room, no hand-off and no approval step: the project w
 
 ## Setup (about 15 minutes)
 
-Tested on macOS. You need [Docker Desktop](https://www.docker.com/products/docker-desktop/), Python 3.11+, Git, [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) and [Switch Console](https://github.com/sandbox-quantum/switch). The tools use only the Python standard library: there is nothing to `pip install`.
+Tested on macOS. You need [Docker Desktop](https://www.docker.com/products/docker-desktop/), Python 3.11+, Git, [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) and [Switch Console](https://docs.switchagents.ai/switch-rooms/getting-started/install-switch-console). The tools use only the Python standard library: there is nothing to `pip install`.
 
 1. **Clone the repo**
    ```bash
    git clone https://github.com/vpandey-github/pantrypal-room.git
    cd pantrypal-room
    ```
-2. **Start Switch.** Follow the [Switch quickstart](https://docs.switchagents.ai/switch-rooms/getting-started). Switch Console runs Switch in Docker and comes with Mattermost.
+2. **Start Switch.** Follow the [Switch quickstart](https://docs.switchagents.ai/switch-rooms/getting-started). Switch Console runs Switch in Docker and comes with Mattermost. Make sure your Mattermost account is linked: Switch Console → **Home** → **Messaging apps** shows your `@username` next to Mattermost.
 3. **Create the people.** In Mattermost, create users for the family alongside your own account. With the Mattermost that Switch Console starts:
    ```bash
-   MM="docker exec switchdash-local-mattermost-mattermost-1 mmctl --local"
-   $MM user create --username mom --email mom@localhost.local --password 'choose-a-password'
-   $MM user create --username dad --email dad@localhost.local --password 'choose-a-password'
-   $MM team users add switch mom dad
+   # Find the Mattermost container name (usually switchdash-local-mattermost-mattermost-1)
+   docker ps --format '{{.Names}}' | grep mattermost
+
+   # A helper that runs mmctl inside it (works in zsh and bash)
+   mm() { docker exec switchdash-local-mattermost-mattermost-1 mmctl --local "$@"; }
+
+   mm team list                 # the team name, usually "switch"
+   mm user create --username mom --email mom@localhost.local --password 'choose-a-password'
+   mm user create --username dad --email dad@localhost.local --password 'choose-a-password'
+   mm team users add switch mom dad
    ```
 4. **Reset the demo data**, with your own Mattermost username as list owner:
    ```bash
@@ -103,7 +109,7 @@ Tested on macOS. You need [Docker Desktop](https://www.docker.com/products/docke
 5. **Load the room.** In Switch Console, load `room/pantrypal.template.yaml`. In the form, replace `{directory}` in **PantryPal repo folder** with the full path of your clone (run `pwd` in it to see it). Provider defaults to Claude Code and the messaging app to Mattermost; change them under Advanced if needed. Select **Create all**.
 6. **Add the family to the room**, since the template adds only you:
    ```bash
-   $MM channel users add switch:kitchen mom dad
+   mm channel users add switch:kitchen mom dad
    ```
 7. **Check it works.** Both agents say hello in `#kitchen`.
 
@@ -111,7 +117,7 @@ Tested on macOS. You need [Docker Desktop](https://www.docker.com/products/docke
 
 First, once per room, type `!assign-agent @pantry-keeper` in `#kitchen`. This makes the Keeper the room's main agent, so family members can just say "bought…" or "used…" without tagging it.
 
-Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a private browser window. A message that tags an agent goes only to that agent, so keep the `@` names.
+Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a private browser window, with the passwords from setup step 3. The Mattermost address is in Switch Console → **Home** → Mattermost row → **⋮** → **Sign-in details…** (on a local server it looks like `http://localhost:<port>`). A message that tags an agent goes only to that agent, so keep the `@` names.
 
 | Who | Message | What happens |
 | --- | --- | --- |
@@ -155,6 +161,11 @@ Each script prints JSON with a `message` the agents can post in chat.
 
 </details>
 
+Running a tool by hand changes the demo data. Run `python3 scripts/seed.py --owner <your-username>` afterwards to reset it. Two environment variables help when trying tools out:
+
+- `PANTRY_DATA_DIR=/some/folder` uses another data folder instead of `data/`
+- `PANTRY_TODAY=2026-11-06` pretends today is that date
+
 Data lives in `data/`: `pantry.json` (stock, by purchase batch), `staples.json` (what the family always keeps), `recipes.json`, `history.json`, `settings.json` (list owner) and `approved_lists.json`.
 
 ## Tests
@@ -176,7 +187,9 @@ The 18 tests run every tool against a fresh copy of the demo data, with today's 
 | An agent doesn't reply | The message didn't tag it, or it's offline | Tag it (`@pantry-chef …`); type `!agents-status` to see who's live |
 | "bought milk" gets no reply | No main agent in the room yet | Type `!assign-agent @pantry-keeper` once in `#kitchen` |
 | The Chef ignores "approved" | The approval wasn't tagged, or it shared a message with another agent's tag | Send `@pantry-chef approved` as its own message |
-| Mom or Dad can't post in `#kitchen` | The template adds only you to the room | `$MM channel users add switch:kitchen mom dad` (setup step 6) |
+| An agent still behaves the old way after you edit the template | Running agents don't reload the template | Paste the new instructions into the agent in Switch Console, then type `!reset-all-agents` |
+| `mm: command not found` | The helper wasn't defined in this terminal | Run the `mm() { … }` line from setup step 3 again |
+| Mom or Dad can't post in `#kitchen` | The template adds only you to the room | `mm channel users add switch:kitchen mom dad` (setup step 6) |
 
 </details>
 
