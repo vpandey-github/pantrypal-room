@@ -17,37 +17,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
 from common import data_dir, save, today  # noqa: E402
 
-# name, qty left, qty bought, unit, expiry (days from today), price (₹ for the batch), added_by, added (days ago)
+# name, qty left, qty bought, unit, expiry (days from today), price ($ for the batch), added_by, added (days ago)
 PANTRY = [
     # In stock now
-    ("spinach", 250, 250, "g", 1, 40, "Mom", 3),
-    ("paneer", 200, 200, "g", 1, 90, "Dad", 4),
-    ("milk", 0.5, 1, "L", 2, 28, "Mom", 2),
-    ("curd", 400, 400, "g", 3, 50, "Mom", 1),
-    ("eggs", 6, 6, "pcs", 10, 42, "Dad", 3),
-    ("bread", 6, 20, "slices", 2, 45, "Dad", 4),
-    ("tomatoes", 3, 8, "pcs", 4, 40, "Mom", 5),
-    ("onions", 6, 12, "pcs", 20, 60, "Mom", 6),
-    ("potatoes", 2, 6, "pcs", 15, 30, "Mom", 6),
-    ("bananas", 3, 6, "pcs", 2, 36, "Dad", 3),
-    ("rice", 3, 5, "kg", 180, 300, "Mom", 12),
-    ("toor dal", 0.4, 1, "kg", 120, 140, "Mom", 12),
-    ("atta", 3, 5, "kg", 90, 250, "Mom", 12),
-    ("poha", 0.5, 0.5, "kg", 60, 45, "Dad", 8),
-    ("lemons", 2, 4, "pcs", 6, 20, "Mom", 5),
-    ("carrots", 2, 4, "pcs", 5, 20, "Mom", 5),
-    ("peas", 200, 250, "g", 3, 30, "Mom", 4),
-    ("cooking oil", 0.3, 1, "L", 200, 160, "Mom", 20),
+    ("spinach", 250, 250, "g", 1, 3.49, "Mom", 3),
+    ("paneer", 200, 200, "g", 1, 4.99, "Dad", 4),
+    ("milk", 0.5, 1, "L", 2, 1.29, "Mom", 2),
+    ("curd", 400, 400, "g", 3, 2.49, "Mom", 1),
+    ("eggs", 6, 6, "pcs", 10, 2.49, "Dad", 3),
+    ("bread", 6, 20, "slices", 2, 3.29, "Dad", 4),
+    ("tomatoes", 3, 8, "pcs", 4, 3.99, "Mom", 5),
+    ("onions", 6, 12, "pcs", 20, 4.49, "Mom", 6),
+    ("potatoes", 2, 6, "pcs", 15, 2.99, "Mom", 6),
+    ("bananas", 3, 6, "pcs", 2, 1.59, "Dad", 3),
+    ("rice", 3, 5, "kg", 180, 12.99, "Mom", 12),
+    ("toor dal", 0.4, 1, "kg", 120, 4.99, "Mom", 12),
+    ("atta", 3, 5, "kg", 90, 9.99, "Mom", 12),
+    ("poha", 0.5, 0.5, "kg", 60, 2.99, "Dad", 8),
+    ("lemons", 2, 4, "pcs", 6, 2.00, "Mom", 5),
+    ("carrots", 2, 4, "pcs", 5, 1.49, "Mom", 5),
+    ("peas", 200, 250, "g", 3, 1.99, "Mom", 4),
+    ("cooking oil", 0.3, 1, "L", 200, 4.99, "Mom", 20),
     # Wasted this week (expired unused)
-    ("coriander", 1, 1, "bunch", -2, 15, "Mom", 6),
-    ("curd", 200, 400, "g", -3, 50, "Mom", 9),
-    ("bread", 5, 20, "slices", -5, 45, "Dad", 10),
+    ("coriander", 1, 1, "bunch", -2, 0.99, "Mom", 6),
+    ("curd", 200, 400, "g", -3, 2.49, "Mom", 9),
+    ("bread", 5, 20, "slices", -5, 3.29, "Dad", 10),
     # Wasted last week (expired unused)
-    ("spinach", 250, 250, "g", -10, 40, "Mom", 14),
-    ("paneer", 100, 200, "g", -9, 90, "Dad", 13),
-    ("tomatoes", 3, 8, "pcs", -12, 40, "Mom", 16),
-    ("milk", 0.5, 1, "L", -11, 28, "Mom", 13),
-    ("bananas", 4, 6, "pcs", -13, 36, "Dad", 17),
+    ("spinach", 250, 250, "g", -10, 3.49, "Mom", 14),
+    ("paneer", 100, 200, "g", -9, 4.99, "Dad", 13),
+    ("tomatoes", 3, 8, "pcs", -12, 3.99, "Mom", 16),
+    ("milk", 0.5, 1, "L", -11, 1.29, "Mom", 13),
+    ("bananas", 4, 6, "pcs", -13, 1.59, "Dad", 17),
 ]
 
 # item, minimum to keep, how much to buy, unit
@@ -126,7 +126,7 @@ def main():
         {"date": (t - timedelta(days=ago)).isoformat(), "type": k, "item": i, "qty": q, "unit": u, "by": by}
         for ago, k, i, q, u, by in HISTORY]})
 
-    save("settings.json", {"list_owner": args.owner.lstrip("@"), "currency": "₹"})
+    save("settings.json", {"list_owner": args.owner.lstrip("@"), "currency": "$"})
     save("approved_lists.json", {"lists": []})
     draft = data_dir() / "draft_list.json"
     if draft.exists():

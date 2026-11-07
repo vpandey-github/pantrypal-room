@@ -91,7 +91,7 @@ Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a p
 
 | Who | Message | What happens |
 | --- | --- | --- |
-| Mom | `bought 2 L milk (₹56) and 12 eggs (₹84)` | Keeper adds both items, with guessed expiry dates |
+| Mom | `bought 2 L milk ($2.58) and 12 eggs ($4.99)` | Keeper adds both items, with guessed expiry dates |
 | Dad | `used 4 eggs for breakfast` | Keeper updates the stock |
 | Dad | `used 30 eggs` | Keeper refuses: only 14 in stock, please check |
 | You | `@pantry-keeper what's expiring?` | Spinach and paneer expire tomorrow; Keeper hands off to Chef |
@@ -103,9 +103,9 @@ Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a p
 | You | `@pantry-chef make this week's shopping list` | Chef drafts the list, skipping the milk Mom just bought, and asks you to approve |
 | Dad | `@pantry-chef approved` | Chef waits: only the list owner can approve |
 | You | `@pantry-chef remove potatoes, add 200 g paneer, approved` | Chef posts the final list |
-| You | `@pantry-keeper weekly report` | 3 items wasted, about ₹51, down 63% from ₹138 last week |
+| You | `@pantry-keeper weekly report` | 3 items wasted, about $3.06, down 67% from $9.20 last week |
 | You | `@pantry-keeper got these today`, with [`demo/sample-bill.png`](demo/sample-bill.png) attached | Keeper reads the bill, lists 6 food items (1 L milk from 2 × 500 ml, carry bag left out) and asks how many tomatoes and onions, since it tracks those in pieces |
-| You | `@pantry-keeper 8 tomatoes and 12 onions. yes` | Keeper adds all 6 items, ₹460 in total |
+| You | `@pantry-keeper 8 tomatoes and 12 onions. yes` | Keeper adds all 6 items, $23.53 in total |
 
 To run the demo again from the start: `python3 scripts/seed.py --owner <your-username>`.
 
@@ -124,7 +124,7 @@ Each script prints JSON with a `message` the agents can post in chat.
 | `python3 tools/meals.py --days 2 --top 3` | Meals that use the soonest-expiring food first |
 | `python3 tools/shopping_list.py draft` | Draft the list from staples running low |
 | `python3 tools/shopping_list.py approve --by <owner> --remove onions --add "paneer:200:g"` | Approve the list (list owner only) |
-| `python3 tools/weekly_report.py` | Waste this week vs last week, in ₹ |
+| `python3 tools/weekly_report.py` | Waste this week vs last week, in $ |
 
 Data lives in `data/`: `pantry.json` (stock, by purchase batch), `staples.json` (what the family always keeps), `recipes.json`, `history.json`, `settings.json` (list owner) and `approved_lists.json`.
 

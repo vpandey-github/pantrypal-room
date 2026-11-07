@@ -7,7 +7,7 @@
       "qty_bought": 250,
       "unit": "g",
       "expiry": "2026-11-08",
-      "price": 40,
+      "price": 3.49,
       "added_by": "Mom",
       "added_on": "2026-11-04"
     },
@@ -18,7 +18,7 @@
       "qty_bought": 200,
       "unit": "g",
       "expiry": "2026-11-08",
-      "price": 90,
+      "price": 4.99,
       "added_by": "Dad",
       "added_on": "2026-11-03"
     },
@@ -29,7 +29,7 @@
       "qty_bought": 1,
       "unit": "L",
       "expiry": "2026-11-09",
-      "price": 28,
+      "price": 1.29,
       "added_by": "Mom",
       "added_on": "2026-11-05"
     },
@@ -40,7 +40,7 @@
       "qty_bought": 400,
       "unit": "g",
       "expiry": "2026-11-10",
-      "price": 50,
+      "price": 2.49,
       "added_by": "Mom",
       "added_on": "2026-11-06"
     },
@@ -51,7 +51,7 @@
       "qty_bought": 6,
       "unit": "pcs",
       "expiry": "2026-11-17",
-      "price": 42,
+      "price": 2.49,
       "added_by": "Dad",
       "added_on": "2026-11-04"
     },
@@ -62,7 +62,7 @@
       "qty_bought": 20,
       "unit": "slices",
       "expiry": "2026-11-09",
-      "price": 45,
+      "price": 3.29,
       "added_by": "Dad",
       "added_on": "2026-11-03"
     },
@@ -73,7 +73,7 @@
       "qty_bought": 8,
       "unit": "pcs",
       "expiry": "2026-11-11",
-      "price": 40,
+      "price": 3.99,
       "added_by": "Mom",
       "added_on": "2026-11-02"
     },
@@ -84,7 +84,7 @@
       "qty_bought": 12,
       "unit": "pcs",
       "expiry": "2026-11-27",
-      "price": 60,
+      "price": 4.49,
       "added_by": "Mom",
       "added_on": "2026-11-01"
     },
@@ -95,7 +95,7 @@
       "qty_bought": 6,
       "unit": "pcs",
       "expiry": "2026-11-22",
-      "price": 30,
+      "price": 2.99,
       "added_by": "Mom",
       "added_on": "2026-11-01"
     },
@@ -106,7 +106,7 @@
       "qty_bought": 6,
       "unit": "pcs",
       "expiry": "2026-11-09",
-      "price": 36,
+      "price": 1.59,
       "added_by": "Dad",
       "added_on": "2026-11-04"
     },
@@ -117,7 +117,7 @@
       "qty_bought": 5,
       "unit": "kg",
       "expiry": "2027-05-06",
-      "price": 300,
+      "price": 12.99,
       "added_by": "Mom",
       "added_on": "2026-10-26"
     },
@@ -128,7 +128,7 @@
       "qty_bought": 1,
       "unit": "kg",
       "expiry": "2027-03-07",
-      "price": 140,
+      "price": 4.99,
       "added_by": "Mom",
       "added_on": "2026-10-26"
     },
@@ -139,7 +139,7 @@
       "qty_bought": 5,
       "unit": "kg",
       "expiry": "2027-02-05",
-      "price": 250,
+      "price": 9.99,
       "added_by": "Mom",
       "added_on": "2026-10-26"
     },
@@ -150,7 +150,7 @@
       "qty_bought": 0.5,
       "unit": "kg",
       "expiry": "2027-01-06",
-      "price": 45,
+      "price": 2.99,
       "added_by": "Dad",
       "added_on": "2026-10-30"
     },
@@ -161,7 +161,7 @@
       "qty_bought": 4,
       "unit": "pcs",
       "expiry": "2026-11-13",
-      "price": 20,
+      "price": 2.0,
       "added_by": "Mom",
       "added_on": "2026-11-02"
     },
@@ -172,7 +172,7 @@
       "qty_bought": 4,
       "unit": "pcs",
       "expiry": "2026-11-12",
-      "price": 20,
+      "price": 1.49,
       "added_by": "Mom",
       "added_on": "2026-11-02"
     },
@@ -183,7 +183,7 @@
       "qty_bought": 250,
       "unit": "g",
       "expiry": "2026-11-10",
-      "price": 30,
+      "price": 1.99,
       "added_by": "Mom",
       "added_on": "2026-11-03"
     },
@@ -194,7 +194,7 @@
       "qty_bought": 1,
       "unit": "L",
       "expiry": "2027-05-26",
-      "price": 160,
+      "price": 4.99,
       "added_by": "Mom",
       "added_on": "2026-10-18"
     },
@@ -205,7 +205,7 @@
       "qty_bought": 1,
       "unit": "bunch",
       "expiry": "2026-11-05",
-      "price": 15,
+      "price": 0.99,
       "added_by": "Mom",
       "added_on": "2026-11-01"
     },
@@ -216,7 +216,7 @@
       "qty_bought": 400,
       "unit": "g",
       "expiry": "2026-11-04",
-      "price": 50,
+      "price": 2.49,
       "added_by": "Mom",
       "added_on": "2026-10-29"
     },
@@ -227,7 +227,7 @@
       "qty_bought": 20,
       "unit": "slices",
       "expiry": "2026-11-02",
-      "price": 45,
+      "price": 3.29,
       "added_by": "Dad",
       "added_on": "2026-10-28"
     },
@@ -238,7 +238,7 @@
       "qty_bought": 250,
       "unit": "g",
       "expiry": "2026-10-28",
-      "price": 40,
+      "price": 3.49,
       "added_by": "Mom",
       "added_on": "2026-10-24"
     },
@@ -249,7 +249,7 @@
       "qty_bought": 200,
       "unit": "g",
       "expiry": "2026-10-29",
-      "price": 90,
+      "price": 4.99,
       "added_by": "Dad",
       "added_on": "2026-10-25"
     },
@@ -260,7 +260,7 @@
       "qty_bought": 8,
       "unit": "pcs",
       "expiry": "2026-10-26",
-      "price": 40,
+      "price": 3.99,
       "added_by": "Mom",
       "added_on": "2026-10-22"
     },
@@ -271,7 +271,7 @@
       "qty_bought": 1,
       "unit": "L",
       "expiry": "2026-10-27",
-      "price": 28,
+      "price": 1.29,
       "added_by": "Mom",
       "added_on": "2026-10-25"
     },
@@ -282,7 +282,7 @@
       "qty_bought": 6,
       "unit": "pcs",
       "expiry": "2026-10-25",
-      "price": 36,
+      "price": 1.59,
       "added_by": "Dad",
       "added_on": "2026-10-21"
     }

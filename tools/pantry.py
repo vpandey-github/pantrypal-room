@@ -1,7 +1,7 @@
 """Add, use, discard and list pantry items.
 
 Examples:
-  python3 tools/pantry.py add --item milk --qty 2 --unit L --expiry 2026-11-10 --price 56 --by Mom
+  python3 tools/pantry.py add --item milk --qty 2 --unit L --expiry 2026-11-10 --price 2.58 --by Mom
   python3 tools/pantry.py use --item eggs --qty 4 --by Dad
   python3 tools/pantry.py cook --meal "palak paneer" --by Mom
   python3 tools/pantry.py discard --item spinach --by Mom

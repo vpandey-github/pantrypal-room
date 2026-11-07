@@ -36,7 +36,7 @@ class PantryToolsTest(unittest.TestCase):
 
     def test_add_then_use_updates_stock(self):
         self.run_script("tools/pantry.py", "add", "--item", "Eggs", "--qty", "12",
-                        "--expiry", "2026-11-20", "--price", "84", "--by", "Mom")
+                        "--expiry", "2026-11-20", "--price", "4.99", "--by", "Mom")
         data = self.run_script("tools/pantry.py", "use", "--item", "egg", "--qty", "4", "--by", "Dad")
         self.assertEqual(data["item"], "eggs")
         self.assertEqual(data["in_stock"], 14)
@@ -98,8 +98,8 @@ class PantryToolsTest(unittest.TestCase):
     def test_weekly_report_counts_waste_and_trend(self):
         data = self.run_script("tools/weekly_report.py")
         self.assertEqual(len(data["wasted_this_week"]), 3)
-        self.assertAlmostEqual(data["wasted_value_this_week"], 51.25)
-        self.assertAlmostEqual(data["wasted_value_last_week"], 138.0)
+        self.assertAlmostEqual(data["wasted_value_this_week"], 3.06)
+        self.assertAlmostEqual(data["wasted_value_last_week"], 9.2)
         self.assertEqual(data["trend"], "down")
 
     def test_discard_counts_as_waste(self):

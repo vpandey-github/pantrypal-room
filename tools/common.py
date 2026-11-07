@@ -69,11 +69,11 @@ def fail(message, **extra):
 
 
 def settings():
-    return load("settings.json", {"list_owner": "owner", "currency": "₹"})
+    return load("settings.json", {"list_owner": "owner", "currency": "$"})
 
 
 def money(value) -> str:
-    return f"{settings().get('currency', '₹')}{round(value):,}"
+    return f"{settings().get('currency', '$')}{value:,.2f}"
 
 
 # ---------- pantry batches ----------

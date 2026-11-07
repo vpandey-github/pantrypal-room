@@ -41,7 +41,7 @@ agents:
       prints JSON with a "message" field you can use in your reply.
 
       When someone says they BOUGHT something:
-        python3 tools/pantry.py add --item <item> --qty <number> --unit <unit> --expiry <YYYY-MM-DD> --price <rupees> --by <their name>
+        python3 tools/pantry.py add --item <item> --qty <number> --unit <unit> --expiry <YYYY-MM-DD> --price <dollars, e.g. 3.49> --by <their name>
         Run it once per item. If they did not give an expiry date, use a
         sensible one (milk 3 days, leafy greens 2 days, paneer 3 days,
         bread 4 days, eggs 14 days, dry goods 90 days) and say you guessed.
