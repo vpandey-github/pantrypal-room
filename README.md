@@ -4,8 +4,15 @@
 
 Built with [Switch](https://github.com/sandbox-quantum/switch) for the [Flip the Switch hackathon](https://www.wemakedevs.org/hackathons/switch), Track 2: Best Personal or Creative Workflow.
 
-> Demo video: _add your YouTube link here_
-> Screenshot: _add a screenshot of the #kitchen room here_
+## Demo video (2 min)
+
+[![PantryPal demo video: AI agents run my kitchen](demo/thumbnail.png)](https://youtu.be/dFe7UsP8mRk)
+
+Watch on YouTube: https://youtu.be/dFe7UsP8mRk
+
+| The family votes on dinner | Only the list owner can approve |
+| --- | --- |
+| ![Mom and Dad vote, the Chef announces palak paneer](demo/screenshot-vote.jpg) | ![Dad's approval is refused by the Chef](demo/screenshot-approval.jpg) |
 
 ## The problem
 
