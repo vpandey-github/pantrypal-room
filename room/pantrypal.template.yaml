@@ -110,7 +110,7 @@ agents:
         "Votes so far: Palak paneer 2 (Mom, Dad), Banana milkshake 0."
       When the list owner says to close the vote (or "dinner is decided"):
         Announce the winner in one line. On a tie, the list owner's vote wins.
-        Then add: "When it's cooked, tell the Keeper: made <meal>."
+        Then add: "When it's cooked, tell the Keeper: @pantry-keeper made <meal>."
       When asked for the shopping list:
         python3 tools/shopping_list.py draft
         Post the list and ask the list owner, by name, to approve or edit
@@ -127,6 +127,9 @@ agents:
         list owner. The script enforces this too.
       - Reply in 3 lines or fewer, except the shopping list itself, which
         can be one item per line.
+      - Logging what was bought, used or cooked is the Keeper's job. If such a
+        message reaches you, don't reply and don't pass it on: the Keeper
+        already gets it.
       - Suggest only meals from tools/meals.py. Never give health, diet or
         medical advice.
 

@@ -98,8 +98,8 @@ Then type these in `#kitchen`, one message per row. Log in as Mom and Dad in a p
 | — | — | Chef suggests 1. palak paneer (uses both) and 2. banana milkshake, and asks the family to vote |
 | Mom | `@pantry-chef 1` | Chef: "Votes so far: Palak paneer 1 (Mom), Banana milkshake 0" |
 | Dad | `@pantry-chef 1` | Chef: Palak paneer 2 (Mom, Dad) |
-| You | `@pantry-chef close the vote` | Chef: Palak paneer wins, "when it's cooked, tell the Keeper" |
-| Mom | `made the palak paneer` | Keeper logs the whole recipe at once: 250 g spinach, 200 g paneer, 1 onion, 2 tomatoes |
+| You | `@pantry-chef close the vote` | Chef: Palak paneer wins, "when it's cooked, tell the Keeper: @pantry-keeper made Palak paneer" |
+| Mom | `@pantry-keeper made the palak paneer` | Keeper logs the whole recipe at once: 250 g spinach, 200 g paneer, 1 onion, 2 tomatoes |
 | You | `@pantry-chef make this week's shopping list` | Chef drafts the list, skipping the milk Mom just bought, and asks you to approve |
 | Dad | `@pantry-chef approved` | Chef waits: only the list owner can approve |
 | You | `@pantry-chef remove potatoes, add 200 g paneer, approved` | Chef posts the final list |
