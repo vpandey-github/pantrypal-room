@@ -5,3 +5,4 @@ __pycache__/
 data/draft_list.json
 skills/
 CLAUDE.md
+.env
