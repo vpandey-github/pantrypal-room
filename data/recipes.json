@@ -1,0 +1,321 @@
+{
+  "recipes": [
+    {
+      "name": "Palak paneer",
+      "minutes": 35,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "spinach",
+          "qty": 250,
+          "unit": "g"
+        },
+        {
+          "item": "paneer",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "tomatoes",
+          "qty": 2,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Paneer bhurji",
+      "minutes": 20,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "paneer",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "tomatoes",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Paneer paratha",
+      "minutes": 30,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "atta",
+          "qty": 0.3,
+          "unit": "kg"
+        },
+        {
+          "item": "paneer",
+          "qty": 150,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "Dal palak",
+      "minutes": 30,
+      "serves": 4,
+      "ingredients": [
+        {
+          "item": "toor dal",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "item": "spinach",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "item": "tomatoes",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Dal tadka",
+      "minutes": 30,
+      "serves": 4,
+      "ingredients": [
+        {
+          "item": "toor dal",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "tomatoes",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Egg bhurji",
+      "minutes": 15,
+      "serves": 2,
+      "ingredients": [
+        {
+          "item": "eggs",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "tomatoes",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Masala omelette",
+      "minutes": 10,
+      "serves": 2,
+      "ingredients": [
+        {
+          "item": "eggs",
+          "qty": 3,
+          "unit": "pcs"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Bread omelette",
+      "minutes": 10,
+      "serves": 2,
+      "ingredients": [
+        {
+          "item": "eggs",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "item": "bread",
+          "qty": 4,
+          "unit": "slices"
+        }
+      ]
+    },
+    {
+      "name": "Banana milkshake",
+      "minutes": 5,
+      "serves": 2,
+      "ingredients": [
+        {
+          "item": "bananas",
+          "qty": 2,
+          "unit": "pcs"
+        },
+        {
+          "item": "milk",
+          "qty": 0.5,
+          "unit": "L"
+        }
+      ]
+    },
+    {
+      "name": "Jeera rice",
+      "minutes": 20,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "rice",
+          "qty": 0.2,
+          "unit": "kg"
+        }
+      ]
+    },
+    {
+      "name": "Veg pulao",
+      "minutes": 30,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "rice",
+          "qty": 0.25,
+          "unit": "kg"
+        },
+        {
+          "item": "carrots",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "peas",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Curd rice",
+      "minutes": 15,
+      "serves": 2,
+      "ingredients": [
+        {
+          "item": "rice",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "item": "curd",
+          "qty": 200,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "name": "Lemon rice",
+      "minutes": 20,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "rice",
+          "qty": 0.2,
+          "unit": "kg"
+        },
+        {
+          "item": "lemons",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Poha",
+      "minutes": 15,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "poha",
+          "qty": 0.15,
+          "unit": "kg"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "potatoes",
+          "qty": 1,
+          "unit": "pcs"
+        },
+        {
+          "item": "lemons",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Aloo paratha",
+      "minutes": 40,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "atta",
+          "qty": 0.3,
+          "unit": "kg"
+        },
+        {
+          "item": "potatoes",
+          "qty": 3,
+          "unit": "pcs"
+        }
+      ]
+    },
+    {
+      "name": "Tomato soup",
+      "minutes": 25,
+      "serves": 3,
+      "ingredients": [
+        {
+          "item": "tomatoes",
+          "qty": 4,
+          "unit": "pcs"
+        },
+        {
+          "item": "onions",
+          "qty": 1,
+          "unit": "pcs"
+        }
+      ]
+    }
+  ]
+}

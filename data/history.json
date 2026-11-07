@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "date": "2026-11-01",
+      "type": "bought",
+      "item": "onions",
+      "qty": 12,
+      "unit": "pcs",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-01",
+      "type": "bought",
+      "item": "potatoes",
+      "qty": 6,
+      "unit": "pcs",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-02",
+      "type": "bought",
+      "item": "tomatoes",
+      "qty": 8,
+      "unit": "pcs",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-03",
+      "type": "bought",
+      "item": "paneer",
+      "qty": 200,
+      "unit": "g",
+      "by": "Dad"
+    },
+    {
+      "date": "2026-11-03",
+      "type": "bought",
+      "item": "bread",
+      "qty": 20,
+      "unit": "slices",
+      "by": "Dad"
+    },
+    {
+      "date": "2026-11-04",
+      "type": "bought",
+      "item": "spinach",
+      "qty": 250,
+      "unit": "g",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-04",
+      "type": "used",
+      "item": "potatoes",
+      "qty": 4,
+      "unit": "pcs",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-05",
+      "type": "used",
+      "item": "bread",
+      "qty": 14,
+      "unit": "slices",
+      "by": "Dad"
+    },
+    {
+      "date": "2026-11-05",
+      "type": "used",
+      "item": "tomatoes",
+      "qty": 5,
+      "unit": "pcs",
+      "by": "Mom"
+    },
+    {
+      "date": "2026-11-06",
+      "type": "used",
+      "item": "onions",
+      "qty": 6,
+      "unit": "pcs",
+      "by": "Mom"
+    }
+  ]
+}

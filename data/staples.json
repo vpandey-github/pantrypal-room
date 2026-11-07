@@ -1,0 +1,70 @@
+{
+  "staples": [
+    {
+      "item": "rice",
+      "min": 2,
+      "buy": 5,
+      "unit": "kg"
+    },
+    {
+      "item": "toor dal",
+      "min": 0.5,
+      "buy": 1,
+      "unit": "kg"
+    },
+    {
+      "item": "atta",
+      "min": 2,
+      "buy": 5,
+      "unit": "kg"
+    },
+    {
+      "item": "milk",
+      "min": 1,
+      "buy": 2,
+      "unit": "L"
+    },
+    {
+      "item": "eggs",
+      "min": 6,
+      "buy": 12,
+      "unit": "pcs"
+    },
+    {
+      "item": "onions",
+      "min": 4,
+      "buy": 10,
+      "unit": "pcs"
+    },
+    {
+      "item": "tomatoes",
+      "min": 4,
+      "buy": 8,
+      "unit": "pcs"
+    },
+    {
+      "item": "potatoes",
+      "min": 4,
+      "buy": 6,
+      "unit": "pcs"
+    },
+    {
+      "item": "bread",
+      "min": 4,
+      "buy": 20,
+      "unit": "slices"
+    },
+    {
+      "item": "curd",
+      "min": 200,
+      "buy": 400,
+      "unit": "g"
+    },
+    {
+      "item": "cooking oil",
+      "min": 0.5,
+      "buy": 1,
+      "unit": "L"
+    }
+  ]
+}
